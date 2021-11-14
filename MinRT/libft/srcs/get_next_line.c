@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vleida <vleida@student.42.fr>              +#+  +:+       +#+        */
+/*   By: fcarl <fcarl@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:45:39 by vleida            #+#    #+#             */
-/*   Updated: 2021/10/06 16:23:08 by vleida           ###   ########.fr       */
+/*   Updated: 2021/10/30 13:23:49 by fcarl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,23 +109,23 @@ static int	ft_helper_dop(char *buf, char **ost, char ***line, int *fl)
 int	ft_gnl_old(int fd, char **line)
 {
 	char		*buf;
-	static char	*ost[FD_SIZE];
+	static char	*ost;
 	int			rdr;
 	int			fl;
 
-	if (fd > FD_SIZE || fd < 0 || BUFFER_SIZE <= 0 || !line)
+	if (fd < 0 || BUFFER_SIZE <= 0 || !line)
 		return (-1);
 	buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
 		return (-1);
 	rdr = 1;
-	while (ft_gnl_cheker(ost[fd]) && rdr)
+	while (ft_gnl_cheker(ost) && rdr)
 	{
 		if (ft_helper(buf, &rdr, fd))
 			return (-1);
-		ost[fd] = ft_strjoin_m(ost[fd], buf, 1);
+		ost = ft_strjoin_m(ost, buf, 1);
 	}
-	if (ft_helper_dop(buf, &ost[fd], &line, &fl))
+	if (ft_helper_dop(buf, &ost, &line, &fl))
 		return (-1);
 	if (!rdr && fl)
 		return (0);

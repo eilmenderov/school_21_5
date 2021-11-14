@@ -6,7 +6,7 @@
 /*   By: vleida <vleida@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 13:47:04 by vleida            #+#    #+#             */
-/*   Updated: 2021/10/06 18:52:32 by vleida           ###   ########.fr       */
+/*   Updated: 2021/11/07 13:51:54 by vleida           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define FD_SIZE	1024
 # define MX_INT		2147483647
 # define MN_INT		-2147483648
 # define FT_ATOI_MN	9223372036854775800
 # define FT_ATOI_MV	9223372036854775807
+# define M_2PI		6.283185307179586
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
@@ -82,6 +82,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_how_many_char(char *str, char c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+int		ft_abs(int a);
+double	ft_abs_f(double a);
 
 /* 2/5 get_next_line_utils.c */
 int		ft_gnl_cheker(char *ost);
@@ -96,4 +98,8 @@ char	*ft_strjoin_m(char const *ost, char const *buf, int c);
 int		ft_ch_for_coinc(char c, char *str);
 void	ft_free_split(char **rez);
 
+/* 2/5 dop_func.c */
+int		ft_skip_fw(char *str, unsigned char sym);
+char	*ft_first_word(char *line, unsigned char sym);
+void	ft_free_all_lst(t_list *lst);
 #endif
