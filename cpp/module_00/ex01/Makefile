@@ -1,24 +1,24 @@
-SRCS	= 
+SRCS	= main.cpp Contact.cpp PhoneBook.cpp
 
-NAME	= 
+NAME	= phonebook
 
-HEADER	= 
+HEADER	= PhoneBook.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
-CPP		= clang++
+CPP		= g++
 
 RM		= rm -f
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-all:			${NAME} ${HEADER}
+all:			${NAME}
 
 %.o: %.c		$(HEADER)
-				$(FLAGS) -c $< -o ${<:.c=.o}
+				$(FLAGS) -c $< -o ${<:.cpp=.o}
 
 ${NAME}:		${OBJS} ${HEADER}
-				${CPP} ${FLAGS} -o ${NAME} ${OBJS}
+				${CPP} ${FLAGS} -o ${NAME} ${OBJS} ${HEADER}
 
 clean:
 				${RM} ${OBJS}
