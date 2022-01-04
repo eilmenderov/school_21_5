@@ -1,8 +1,8 @@
-SRCS	= 
+SRCS	= Account.cpp test.cpp
 
-NAME	= 
+NAME	= run
 
-HEADER	= 
+HEADER	= Account.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
