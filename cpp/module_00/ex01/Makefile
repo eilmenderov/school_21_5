@@ -18,7 +18,7 @@ all:			${NAME}
 				$(FLAGS) -c $< -o ${<:.cpp=.o}
 
 ${NAME}:		${OBJS} ${HEADER}
-				${CPP} ${FLAGS} -o ${NAME} ${OBJS} ${HEADER}
+				${CPP} ${FLAGS} -o ${NAME} ${OBJS}
 
 clean:
 				${RM} ${OBJS}
