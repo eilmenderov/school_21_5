@@ -1,8 +1,8 @@
-SRCS	= main.cpp Zombie.cpp ZombieHorde.cpp
+SRCS	= 
 
-NAME	= zombie
+NAME	= 
 
-HEADER	= Zombie.hpp
+HEADER	= 
 
 OBJS	= ${SRCS:.cpp=.o}
 
