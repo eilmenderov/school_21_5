@@ -1,8 +1,8 @@
-SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRCS	= main.cpp
 
-NAME	= run
+NAME	= replace
 
-HEADER	= HumanA.hpp HumanB.hpp Weapon.hpp
+HEADER	= 
 
 OBJS	= ${SRCS:.cpp=.o}
 
@@ -25,6 +25,7 @@ clean:
 
 fclean:			clean
 				${RM} ${NAME}
+				${RM} *.replace
 
 re:				fclean ${NAME}
 

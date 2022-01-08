@@ -1,8 +1,8 @@
-SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRCS	= main.cpp Karen.cpp
 
-NAME	= run
+NAME	= karenFilter
 
-HEADER	= HumanA.hpp HumanB.hpp Weapon.hpp
+HEADER	= Karen.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
