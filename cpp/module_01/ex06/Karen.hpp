@@ -11,7 +11,7 @@ class Karen {
         ~Karen();
 
         void    complain(std::string level);
-        void    filter(std::string level, std::string argv);
+        void    filter(std::string level);
     
     private:
         void    debug(void);
