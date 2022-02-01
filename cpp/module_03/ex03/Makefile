@@ -1,12 +1,12 @@
-SRCS	= ClapTrap.cpp main.cpp
+SRCS	= ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 NAME	= run
 
-HEADER	= ClapTrap.hpp
+HEADER	= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
-CPP		= c++
+CPP		= clang++
 
 RM		= rm -f
 
