@@ -6,7 +6,7 @@ HEADER	= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
-CPP		= clang++
+CPP		= c++
 
 RM		= rm -f
 

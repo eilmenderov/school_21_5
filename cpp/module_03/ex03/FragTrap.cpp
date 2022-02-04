@@ -1,13 +1,10 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() {
+FragTrap::FragTrap() : ClapTrap("Noname_Frag", frag_hp, frag_energy, frag_attack) {
 
     whoami = "FragTrap";
-    name = "Noname_Scav";
     std::cout << whoami << "\x1B[32m default constructor called for \033[0m" << name << std::endl;
-    hp = 100;
-    energy = 50;
-    damage = 20;
+
 }
 
 FragTrap::~FragTrap() {
@@ -15,14 +12,10 @@ FragTrap::~FragTrap() {
     std::cout << whoami << "\x1B[31m destructor called for \033[0m" << name << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name, frag_hp, frag_energy, frag_attack) {
 
     whoami = "FragTrap";
-    this->name = name;
     std::cout << whoami << "\x1B[32m constructor called for \033[0m" << name << std::endl;
-    hp = 100;
-    energy = 50;
-    damage = 20;
 }
 
 void    FragTrap::highFivesGuys() {

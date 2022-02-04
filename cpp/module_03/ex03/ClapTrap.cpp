@@ -1,13 +1,9 @@
 # include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {
+ClapTrap::ClapTrap() : name("Noname_Clap"), hp(10), energy(10), damage(0){
 
-    whoami = "ClapTrap";
-    name = "Noname_Clap";
+    ClapTrap::whoami = "ClapTrap";
     std::cout << whoami << "\x1B[32m default constructor called for \033[0m" << name << std::endl;
-    hp = 10;
-    energy = 10;
-    damage = 0;
 }
 
 ClapTrap::~ClapTrap() {
@@ -16,14 +12,20 @@ ClapTrap::~ClapTrap() {
     std::cout << whoami << "\x1B[31m destructor called for \033[0m" << name << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) {
+ClapTrap::ClapTrap(std::string name) : name(name), hp(10), energy(10), damage(0) {
+
+    whoami = "ClapTrap";
+    std::cout << whoami << "\x1B[32m constructor called for \033[0m" << name << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, int hp, int energy, int damage) {
 
     whoami = "ClapTrap";
     this->name = name;
     std::cout << whoami << "\x1B[32m constructor called for \033[0m" << name << std::endl;
-    hp = 10;
-    energy = 10;
-    damage = 0;
+    this->hp = hp;
+    this->energy = energy;
+    this->damage = damage;
 }
 
 void    ClapTrap::attack(std::string const &target) {

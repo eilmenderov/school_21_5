@@ -1,12 +1,8 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap():FragTrap() {
+DiamondTrap::DiamondTrap() : ClapTrap("Noname_Diamond", frag_hp, scav_energy, frag_attack), FragTrap(), ScavTrap(){
 
-    // this->name = "Noname_Scav";
-    // std::cout << "\x1B[32m DiamondTrap default constructor called for \033[0m" << name << std::endl;
-    // this->hp = FragTrap::hp;
-    // energy = ScavTrap::energy;
-
+    std::cout << "\x1B[32mDiamondTrap default constructor called\033[0m" << name << std::endl;
 }
 
 DiamondTrap::~DiamondTrap() {
@@ -14,11 +10,12 @@ DiamondTrap::~DiamondTrap() {
     std::cout << "\x1B[31mDiamondTrap destructor called for \033[0m" << name << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) {
+DiamondTrap::DiamondTrap(std::string call_me)  : ClapTrap(call_me + "_clap_name" , frag_hp, scav_energy, frag_attack), FragTrap(), ScavTrap(), name(call_me) {
 
-    // this->name = name;
-    // std::cout << "\x1B[32m constructor called for \033[0m" << name << std::endl;
-    // hp = 100;
-    // energy = 50;
-    // damage = 20;
+    std::cout << "\x1B[32mDiamondTrap constructor called for \033[0m" << name <<std::endl;
+}
+
+void    DiamondTrap::whoAmI(void) {
+
+    std::cout << "My name is " << name << " and my clap-name is " << ScavTrap::name << std::endl;
 }

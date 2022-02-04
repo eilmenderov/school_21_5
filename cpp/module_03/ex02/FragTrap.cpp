@@ -6,8 +6,8 @@ FragTrap::FragTrap() {
     name = "Noname_Scav";
     std::cout << whoami << "\x1B[32m default constructor called for \033[0m" << name << std::endl;
     hp = 100;
-    energy = 50;
-    damage = 20;
+    energy = 100;
+    damage = 30;
 }
 
 FragTrap::~FragTrap() {
@@ -21,8 +21,8 @@ FragTrap::FragTrap(std::string name) {
     this->name = name;
     std::cout << whoami << "\x1B[32m constructor called for \033[0m" << name << std::endl;
     hp = 100;
-    energy = 50;
-    damage = 20;
+    energy = 100;
+    damage = 30;
 }
 
 void    FragTrap::highFivesGuys() {

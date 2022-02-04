@@ -7,6 +7,11 @@ class   ScavTrap : public ClapTrap {
 
     private:
 
+    protected:
+        static const int scav_hp = 100;
+        static const int scav_energy = 50;
+        static const int scav_attack = 20;
+
     public:
             ScavTrap ();
             ~ScavTrap();

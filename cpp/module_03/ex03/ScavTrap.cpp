@@ -1,13 +1,9 @@
-#include "ScavTrap.hpp"
+# include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {
+ScavTrap::ScavTrap() : ClapTrap("Noname_Scav", scav_hp, scav_energy, scav_attack){
 
     whoami = "ScavTrap";
-    name = "Noname_Scav";
     std::cout << whoami << "\x1B[32m default constructor called for \033[0m" << name << std::endl;
-    hp = 100;
-    energy = 50;
-    damage = 20;
 }
 
 ScavTrap::~ScavTrap() {
@@ -15,14 +11,10 @@ ScavTrap::~ScavTrap() {
     std::cout << whoami << "\x1B[31m destructor called for \033[0m" << name << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, scav_hp, scav_energy, scav_attack) {
 
     whoami = "ScavTrap";
-    this->name = name;
     std::cout << whoami << "\x1B[32m constructor called for \033[0m" << name << std::endl;
-    hp = 100;
-    energy = 50;
-    damage = 20;
 }
 
 void    ScavTrap::guardGate() {

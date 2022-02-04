@@ -16,6 +16,7 @@ class   ClapTrap {
         ClapTrap();
         ~ClapTrap();
         ClapTrap(std::string name);
+        ClapTrap(std::string name, int hp, int energy, int damage);
 
         void    attack(std::string const &target);
         void    takeDamage(unsigned int amount);
