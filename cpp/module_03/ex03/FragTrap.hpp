@@ -1,16 +1,16 @@
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-# include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
 
 class   FragTrap : virtual public ClapTrap {
 
     private:
-        static const int frag_energy = 100;
+        static const unsigned int frag_energy = 100;
 
     protected:
-        static const int frag_hp = 100;
-        static const int frag_attack = 30;
+        static const unsigned int frag_hp = 100;
+        static const unsigned int frag_attack = 30;
 
     public:
             FragTrap ();

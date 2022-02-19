@@ -5,9 +5,11 @@ int main(void) {
     // ClapTrap	trap1;
 	// ClapTrap	trap2("Cat");
 
+	// std::cout << trap2.getEnergy() << std::endl;
 	// trap1.attack("Dog");
 	// trap1.takeDamage(3);
 	// trap2.beRepaired(2);
+	// std::cout << trap1.getEnergy() << std::endl;
 
 	// std::cout << std::endl;
 	// ScavTrap	trap3;
@@ -29,11 +31,12 @@ int main(void) {
 	DiamondTrap	trap7;
 	DiamondTrap	trap8("Danil");
 	trap8.whoAmI();
-	// trap7.attack(trap8.getName());
+	trap8.getName();
+	trap7.attack(trap8.getName());
 	trap7.highFivesGuys();
 	trap8.guardGate();
-	// trap8.takeDamage(15);
-	// trap7.beRepaired(9);
+	trap8.takeDamage(15);
+	trap7.beRepaired(9);
 	std::cout << std::endl;
 	return 0;
 }

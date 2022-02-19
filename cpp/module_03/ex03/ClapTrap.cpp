@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(std::string name) : name(name), hp(10), energy(10), damage(0)
     std::cout << whoami << "\x1B[32m constructor called for \033[0m" << name << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name, int hp, int energy, int damage) {
+ClapTrap::ClapTrap(std::string name, unsigned int hp, unsigned int energy, unsigned int damage) {
 
     whoami = "ClapTrap";
     this->name = name;
@@ -32,7 +32,7 @@ void    ClapTrap::attack(std::string const &target) {
 
     if (hp > 0) {
         if (energy > 0) {
-            std::cout << whoami << " " << name << " attack " << target << ", causing " << damage << " points of damage!" << std::endl;
+            std::cout << whoami << " " << name << " attack " << target << ", causing " << damage << " pounsigned ints of damage!" << std::endl;
             energy--;
         }
         else
@@ -44,21 +44,22 @@ void    ClapTrap::attack(std::string const &target) {
 
 void    ClapTrap::takeDamage(unsigned int amount) {
 
-    std::cout << whoami << " " << name << " take " << amount << " points of damage" << std::endl;
-	hp -= amount;
-	if (hp < 0) {
+    std::cout << whoami << " " << name << " take " << amount << " pounsigned ints of damage" << std::endl;
+	if (hp < amount) {
 		hp = 0;
 		std::cout << whoami << " " << name << " dead" << std::endl;
 	}
-    else
+    else {
+        hp -= amount;
 	    std::cout << whoami << " " << name << " " << hp << " hp has been left" << std::endl;
+    }
 }
 
 void    ClapTrap::beRepaired(unsigned int amount) {
 
     if (hp > 0) {
         if (energy > 0) {
-            std::cout << whoami << " " << name << " was repaired, " << amount << " points was used" << std::endl;
+            std::cout << whoami << " " << name << " was repaired, " << amount << " pounsigned ints was used" << std::endl;
 	        hp += amount;
             energy--;
 	        std::cout << whoami << " " << name << " " << hp << " hp has been left" << std::endl;
@@ -75,37 +76,37 @@ void    ClapTrap::setName(std::string name) {
     this->name = name;
 }
 
-std::string ClapTrap::getName() const {
+const std::string &ClapTrap::getName() {
 
     return name;
 }
 
-void    ClapTrap::setHealth(int hp) {
+void    ClapTrap::setHealth(unsigned int hp) {
 
     this->hp = hp;
 }
 
-int     ClapTrap::getHealth() const {
+unsigned int     ClapTrap::getHealth() const {
 
     return hp;
 }
 
-void    ClapTrap::setEnergy(int energy) {
+void    ClapTrap::setEnergy(unsigned int energy) {
 
     this->energy = energy;
 }
 
-int     ClapTrap::getEnergy() const {
+unsigned int     ClapTrap::getEnergy() const {
 
     return energy;
 }
 
-void    ClapTrap::setDamage(int damage) {
+void    ClapTrap::setDamage(unsigned int damage) {
 
     this->damage = damage;
 }
 
-int     ClapTrap::getDamage() const {
+unsigned int     ClapTrap::getDamage() const {
 
     return damage;
 }
