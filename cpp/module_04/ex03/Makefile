@@ -1,8 +1,8 @@
-SRCS	= 
+SRCS	= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
-NAME	= 
+NAME	= run
 
-HEADER	= 
+HEADER	= AMateria.hpp Ice.hpp Cure.hpp Character.hpp MateriaSource.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 

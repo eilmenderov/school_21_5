@@ -1,8 +1,8 @@
-SRCS	= 
+SRCS	= Animal.cpp Dog.cpp Cat.cpp main.cpp Brain.cpp
 
-NAME	= 
+NAME	= run
 
-HEADER	= 
+HEADER	= Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
