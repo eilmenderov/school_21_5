@@ -1,0 +1,52 @@
+#ifndef FORM_HPP
+# define FORM_HPP
+
+# include <iostream>
+class Bureaucrat;
+
+class Form {
+
+    public:
+        class GradeTooHighException : public std::exception {
+            virtual const char  *what() const throw ();
+            static const char   *ErrMsgGradeHigh;
+        };
+
+        class GradeTooLowException : public std::exception {
+            virtual const char  *what() const throw ();
+            static const char   *ErrMsgGradeLow;
+        };
+
+        class NotSignedException : public std::exception {
+            virtual const char  *what() const throw ();
+            static const char   *ErrMsgNotSigned;
+        };
+
+        ~Form();
+
+        const std::string       &getName() const;
+        bool                    checkIfSigned() const;
+        int                     getGradeToSign() const;
+        int                     getGradeToExecute() const;
+        void                    beSigned(Bureaucrat &signer);
+        void                    execute(Bureaucrat const &executor) const;
+        virtual void            takeAction() const = 0;
+        
+    protected:
+        Form(const std::string &name, const int grade_to_sign, const int grade_to_execute);
+
+    private:
+        Form();
+        Form(const Form &other);
+
+        Form                    &operator=(const Form &other);
+
+        const std::string       &name_;
+        bool                    is_signed_;
+        const int               grade_to_sign_;
+        const int               grade_to_execute_;
+};
+
+std::ostream                    &operator<<(std::ostream &os, const Form &f);
+
+#endif
