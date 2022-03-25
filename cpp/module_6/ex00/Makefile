@@ -1,8 +1,8 @@
-SRCS	= 
+SRCS	= Converter.cpp main.cpp
 
 NAME	= run
 
-HEADER	= 
+HEADER	= Converter.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 

@@ -1,8 +1,8 @@
-SRCS	= 
+SRCS	= main.cpp A.cpp B.cpp C.cpp Base.cpp
 
 NAME	= run
 
-HEADER	= 
+HEADER	= A.hpp B.hpp C.hpp Base.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 

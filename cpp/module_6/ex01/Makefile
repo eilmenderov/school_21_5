@@ -1,8 +1,8 @@
-SRCS	= 
+SRCS	= main.cpp Serializer.cpp
 
 NAME	= run
 
-HEADER	= 
+HEADER	= Serializer.hpp Data.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
