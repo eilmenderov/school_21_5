@@ -2,7 +2,7 @@ SRCS	= main.cpp
 
 NAME	= run
 
-HEADER	= iter.hpp
+HEADER	= easyfind.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 

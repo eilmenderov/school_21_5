@@ -1,8 +1,8 @@
-SRCS	= 
+SRCS	= main.cpp
 
 NAME	= run
 
-HEADER	= 
+HEADER	= Array.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 

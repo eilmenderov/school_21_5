@@ -1,8 +1,8 @@
-SRCS	= main.cpp
+SRCS	= 
 
 NAME	= run
 
-HEADER	= iter.hpp
+HEADER	= 
 
 OBJS	= ${SRCS:.cpp=.o}
 
