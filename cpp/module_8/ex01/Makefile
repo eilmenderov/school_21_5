@@ -1,8 +1,8 @@
-SRCS	= 
+SRCS	= Span.cpp main.cpp
 
 NAME	= run
 
-HEADER	= 
+HEADER	= Span.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
